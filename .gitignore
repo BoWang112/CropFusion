@@ -1,0 +1,94 @@
+# ==================== 凭证（绝不提交）====================
+.env
+*.env
+config_local.py
+secrets.json
+
+# ==================== Python 环境与缓存 ====================
+.venv*/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+
+# ==================== 编辑器 / 工具产物 ====================
+.idea/
+.vscode/
+.codeartsdoer/
+.codegraph/
+.merkle-snapshot.json
+*.swp
+.DS_Store
+Thumbs.db
+
+# ==================== 第三方代码（含上游凭证，勿并入）====================
+SG-RAG-main/
+
+# ==================== 预训练模型权重（HF 可下载，体积过大）====================
+CDPKG/models/
+CDPKG/命名实体识别/chinese-roberta-wwm-ext/
+CDPKG/关系抽取/chinese-roberta-wwm-ext/
+*.bin
+*.pt
+*.pth
+*.h5
+*.msgpack
+*.onnx
+*.safetensors
+*.ckpt
+
+# ==================== 微调检查点 ====================
+CDPKG/命名实体识别/checkpoint_*/
+CDPKG/关系抽取/checkpoint_*/
+
+# ==================== 原始 / 中间数据（可由脚本重建）====================
+# 2Wiki 外部验证数据
+2wiki/data/
+# 农业检索问答索引与评测集
+CDPKG/retrieval_qa/data/index/
+CDPKG/retrieval_qa/data/results/
+# 知识抽取标注数据
+CDPKG/合并数据811/
+CDPKG/虫害数据/
+CDPKG/标准数据/
+CDPKG/病害标注数据/
+CDPKG/results_merged/
+
+# 通用数据格式
+*.parquet
+*.npy
+*.npz
+*.pkl
+*.faiss
+*.hdf5
+*.sqlite
+*.db
+
+# ==================== 知识库源文件（结构化数据）====================
+CDPKG/病害知识库.xlsx
+CDPKG/虫害知识库.xlsx
+CDPKG/实体+关系.docx
+
+# ==================== 文档 / 文献（版权与体积）====================
+*.pdf
+*.docx
+*.doc
+
+# ==================== 运行日志与缓存 ====================
+*.log
+**/llm_cache/
+**/tri_cache.pkl
+
+# ==================== 结果产物（按需公开）====================
+# 2Wiki 外部验证的预测结果与结果表
+2wiki/outputs/
+# 农业系统的评测集 / few-shot 池 / 社区摘要等数据
+CDPKG/retrieval_qa/data/
+# 根目录的实验结果表
+/*.xlsx
+# 图表输出（如需公开请解除注释）
+*_charts/
